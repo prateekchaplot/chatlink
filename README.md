@@ -2,6 +2,8 @@
 
 A short messaging app built on MERN stack
 
+[Live Demo](https://chatlink-mern.web.app)
+
 ## Technologies used
 - MongoDB
 - Express.js
