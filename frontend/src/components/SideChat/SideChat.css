@@ -1,22 +1,22 @@
-.chat {
+.sidechat {
   display: flex;
   padding: 20px;
   cursor: pointer;
   border-bottom: 1px solid #f6f6f6;
 }
-.chat:hover {
+.sidechat:hover {
   background-color: #ebebeb;
 }
-.chat__info > h2 {
+.sidechat__info > h2 {
   font-size: 16px;
   margin: 0 0 8px 0;
 }
-.chat__info > p {
+.sidechat__info > p {
   margin: 0;
 }
-.chat__info {
+.sidechat__info {
   margin-left: 15px;
 }
-.chat__avatar {
+.sidechat__avatar {
   align-self: center;
 }

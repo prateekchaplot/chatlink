@@ -5,7 +5,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import Chat from "../Chat/Chat";
+import Chat from "../SideChat/SideChat";
 
 function Sidebar() {
   return (

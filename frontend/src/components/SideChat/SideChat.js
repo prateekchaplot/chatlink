@@ -1,4 +1,4 @@
-import "./Chat.css";
+import "./SideChat.css";
 import { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 
@@ -9,9 +9,9 @@ function Chat() {
   }, []);
 
   return (
-    <div className="chat">
-      <Avatar className="chat__avatar" />
-      <div className="chat__info">
+    <div className="sidechat">
+      <Avatar className="sidechat__avatar" />
+      <div className="sidechat__info">
         <h2>Room name</h2>
         <p>Last message...</p>
       </div>
