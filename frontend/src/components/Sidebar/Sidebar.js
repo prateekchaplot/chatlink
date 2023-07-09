@@ -5,6 +5,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import Chat from "../Chat/Chat";
 
 function Sidebar() {
   return (
@@ -33,7 +34,11 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className="sidebar__chats"></div>
+      <div className="sidebar__chats">
+        <Chat />
+        <Chat />
+        <Chat />
+      </div>
     </div>
   );
 }
