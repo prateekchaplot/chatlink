@@ -10,4 +10,13 @@ A short messaging app built on MERN stack
 
 ## Getting started
 - Frontend
+
+    ```
+    cd frontend && npm i && npm start
+    ```
+
 - Backend
+
+    ```
+    cd backend && npm i && npm start
+    ```
