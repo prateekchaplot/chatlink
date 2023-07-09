@@ -5,6 +5,8 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import MicIcon from "@mui/icons-material/Mic";
 
 function Chat() {
   const [seed, setSeed] = useState("");
@@ -56,7 +58,15 @@ function Chat() {
           <span className="chat__timestamp">{new Date().toUTCString()}</span>
         </p>
       </div>
-      <div className="chat__footer"></div>
+
+      <div className="chat__footer">
+        <InsertEmoticonIcon />
+        <form>
+          <input type="text" placeholder="Type a message" />
+          <button type="submit">Send a message</button>
+        </form>
+        <MicIcon />
+      </div>
     </div>
   );
 }
