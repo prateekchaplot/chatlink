@@ -1,8 +1,9 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/storage";
-import "firebase/database";
-import "firebase/firestore";
+// import firebase from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+// import "firebase/storage";
+// import "firebase/database";
+// import "firebase/firestore";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
@@ -13,10 +14,10 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+const app = initializeApp(firebaseConfig);
+// const db = app.firestore();
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
-export { auth, provider };
-export default db;
+export { auth, provider, signInWithPopup };
+// export default db;
