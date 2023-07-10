@@ -1,12 +1,15 @@
 import "./Login.css";
 import Button from "@mui/material/Button";
 import { auth, provider, signInWithPopup } from "../../firebase.js";
-// import { signInWithPopup } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store";
 
 function Login() {
+  const dispatch = useDispatch();
+
   const signIn = () => {
     signInWithPopup(auth, provider)
-      .then((result) => console.log(result))
+      .then((result) => dispatch(setUser(result.user)))
       .catch((err) => console.log(err));
   };
 
