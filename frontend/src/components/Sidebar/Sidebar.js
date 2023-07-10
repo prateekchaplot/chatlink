@@ -5,13 +5,16 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import Chat from "../SideChat/SideChat";
+import SideChat from "../SideChat/SideChat";
+import { useSelector } from "react-redux";
 
-function Sidebar() {
+function Sidebar({ messages }) {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar />
+        <Avatar src={user?.photoURL} />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
@@ -35,9 +38,7 @@ function Sidebar() {
       </div>
 
       <div className="sidebar__chats">
-        <Chat />
-        <Chat />
-        <Chat />
+        <SideChat messages={messages} />
       </div>
     </div>
   );

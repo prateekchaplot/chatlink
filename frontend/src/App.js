@@ -5,10 +5,11 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Pusher from "pusher-js";
 import axios from "axios";
 import Login from "./components/Login/Login";
+import { useSelector } from "react-redux";
 
 function App() {
   const [messages, setMessages] = useState([]);
-  const [user, setUser] = useState(null);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     axios.get("/messages/sync").then((res) => setMessages(res.data));
@@ -30,15 +31,13 @@ function App() {
     };
   }, [messages]);
 
-  console.log(messages);
-
   return (
     <div className="app">
       {!user ? (
         <Login />
       ) : (
         <div className="app__body">
-          <Sidebar />
+          <Sidebar messages={messages} />
           <Chat messages={messages} />
         </div>
       )}

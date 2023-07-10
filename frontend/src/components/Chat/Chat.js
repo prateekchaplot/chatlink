@@ -8,16 +8,18 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import MicIcon from "@mui/icons-material/Mic";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Chat({ messages }) {
   const [seed, setSeed] = useState("");
   const [input, setInput] = useState("");
+  const user = useSelector((state) => state.user);
 
   const sendMessage = async (e) => {
     e.preventDefault();
     await axios.post("/messages/new", {
       message: input,
-      name: "prateek",
+      name: user?.displayName,
       timestamp: new Date().toUTCString(),
       received: false,
     });
@@ -35,8 +37,8 @@ function Chat({ messages }) {
         <Avatar />
 
         <div className="chat__headerInfo">
-          <h3>Room name</h3>
-          <p>Last seen at...</p>
+          <h3>Dev Help</h3>
+          <p>Last seen at {messages[messages.length - 1]?.timestamp}</p>
         </div>
 
         <div className="chat__headerRight">
@@ -57,7 +59,9 @@ function Chat({ messages }) {
       <div className="chat__body">
         {messages.map((message) => (
           <p
-            className={`chat__message ${!message.received && "chat__receiver"}`}
+            className={`chat__message ${
+              message.name === user.displayName && "chat__receiver"
+            }`}
           >
             <span className="chat__name">{message.name}</span>
             {message.message}
