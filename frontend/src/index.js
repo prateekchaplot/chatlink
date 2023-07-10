@@ -7,7 +7,9 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:8001" : "";
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:8001"
+    : "https://chatlink-xi.vercel.app";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
